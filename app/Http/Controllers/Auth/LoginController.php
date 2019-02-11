@@ -39,7 +39,7 @@ class LoginController extends Controller {
     protected function redirectTo() {
 
         if (Auth::user()->type == "admin") {
-            return "admin/users";
+            return "admin";
         } else if (Auth::user()->type == "member") {
             dd("falta crear la vista de member");
         }

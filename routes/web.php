@@ -10,19 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
-Route::get('/', ["as" => "admin.index", function () {
-    return view('welcome');
-}]);
+//rutas del fronted
+Route::get('/', [
+    "as"   => "front.index",
+    "uses" => "FrontController@index",
+]);
 
 //definimos un grupo de ruotas
 //le passamos un prefico q en este caso es sea admin
 //mandomos a una ruta de tioo modificar o q tenga aciones de modificar
 //buscar la documentacion de larvel de toda maneras
+//y estas son las rutas para el panel de administracion
 Route::group(["prefix" => "admin", "middleware" => "auth"], function () {
 
     Route::get("/", ["as" => "admin.index", function () {
-        return view('welcome');
+        return view('admin.index');
     }]);
 
     //como primer pararametro q resive es la url a ala q vamos y despues el controlador

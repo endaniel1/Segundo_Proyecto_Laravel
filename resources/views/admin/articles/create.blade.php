@@ -89,6 +89,6 @@
 		$(".textarea-content").trumbowyg({});
 
 
-    //$(".multi-file").MultiFile({});
+   // $(".multi-file").MultiFile({});
 	</script>
 @endsection

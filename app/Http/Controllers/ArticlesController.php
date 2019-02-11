@@ -97,6 +97,7 @@ class ArticlesController extends Controller {
         return redirect()->route("articles.index"); //redirecionamos a la ruta del index
 
         //fin de la manipulacion de imagen
+
     }
 
     /**

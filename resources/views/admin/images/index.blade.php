@@ -5,6 +5,7 @@
 @section("Logo_Conte","glyphicon glyphicon-duplicate")
 @section("Info_Conte","Lista de Imagenes")
 
+
 @section("content")
 	<div class="row">
 		@foreach($images as $image)
@@ -18,4 +19,5 @@
 			</div>
 		@endforeach
 	</div>
+	{!! $images->render()!!}
 @endsection
