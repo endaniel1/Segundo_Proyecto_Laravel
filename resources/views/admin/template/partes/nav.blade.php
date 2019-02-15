@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="https://codigofacilito.com">Proyecto Codigo Facilito</a>
+      <a class="navbar-brand" href="https://codigofacilito.com">Curso Codigo Facilito</a>
     </div>
     {{-- aqqui desimos si ay un unsuario autentificado mostamos estoz parte--}}
     @auth

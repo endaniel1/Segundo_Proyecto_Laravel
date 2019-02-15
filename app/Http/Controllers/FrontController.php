@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Article; //aqui llamamos a la clase article para usarlo
-use App\Category; //aqui llamamos a la clase category para usarlo
-use App\Tag;
+use App\Article; //aqui llamamos a la clase article para usarla
+use App\Category; //aqui llamamos a la clase category para usarla
+use App\Tag; //aqui llamamos a la clase Tag para usarla
 use Carbon\Carbon;
 
 //usamos la clase carbon para usarla
@@ -21,7 +21,7 @@ class FrontController extends Controller {
         //despues con el metdo each hacmos un recorrido a la varible para traer las relaciones correspondiente  a el modelo
         $articles->each(function ($articles) {
             $articles->category;
-            $articles->images = \App\Image::find($articles->id); //aqui la relacuion de los articulos con las imagenes la tuve q resplazar manualmente poque tengo un problema q es q no me lee la relacion de de las imagenes con los ariculos para q me pueda dar y buscar las imagen del ariculo
+            $articles->images = \App\Image::find($articles->id); //aqui la relacion de los articulos con las imagenes la tuve q resplazar manualmente poque tengo un problema q es q no me lee la relacion de de las imagenes con los ariculos para q me pueda dar y buscar las imagen del ariculo
 
         });
 
@@ -34,27 +34,34 @@ class FrontController extends Controller {
 
     //metodo para buscar las categorias
     public function buscadorCategory($name) {
-
+        //llamamos al metodo categoy y a su scope llamado Buscador Category y le pasamos el nombre del de la cartegori
+        //ademas utilizamso el metodo firts() q es para q nos busque el el primero y ademas porque nos va a devolver lo q encuentre en forma de un objeto
         $category = Category::BuscadorCategory($name)->first();
-        //dd($category->articles);
-        $articles = $category->articles()->paginate(4);
+
+        $articles = $category->articles()->paginate(4); //aqu creamos una variable llamada articles q nos tenga la relacion entre la categoria con los articulos y paginamos ese resultado. articles() lo colocamos asi para q nos traiga como en forma de una instancia todos los resultados q encuente
+        //ahora con el metdo each recoremos la variable y llamamos a las relaciones q carga
         $articles->each(function ($articles) {
             $articles->category;
-            $articles->images = \App\Image::find($articles->id);
-
+            $articles->images = \App\Image::find($articles->id); //aqui igual tuve q remplazar la relacion porque no me daba
         });
+        //y aqui retonamos a la vista pasando le la variable con el metdo with
         return view("front.index")
             ->with("articles", $articles);
     }
+    //metodo para buscar los Tags
     public function buscadorTag($name) {
-        $tag = Tag::BuscadorTag($name)->first();
+        //llamamos al metodo tag y a su scope llamado Buscador Tag y le pasamos el nombre del del tag
+        //ademas utilizamso el metodo firts() q es para q nos busque el el primero y ademas porque nos va a devolver lo q encuentre en forma de un objeto
+        $tag = Tag::BuscadorTag($name)->first(); //aqu creamos una variable llamada articles q nos tenga la relacion entre los tags con los articulos y paginamos ese resultado. articles() lo colocamos asi para q nos traiga como en forma de una instancia todos los resultados q encuente
+        //ahora con el metdo each recoremos la variable y llamamos a las relaciones q carga
 
         $articles = $tag->articles()->paginate(4);
         $articles->each(function ($articles) {
             $articles->category;
-            $articles->images = \App\Image::find($articles->id);
+            $articles->images = \App\Image::find($articles->id); //aqui igual tuve q remplazar la relacion porque no me daba
 
         });
+        //y aqui retonamos a la vista pasando le la variable con el metdo with
         return view("front.index")
             ->with("articles", $articles);
     }
