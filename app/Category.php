@@ -18,4 +18,14 @@ class Category extends Model {
         //hasMany representa la relacion de un a muchos
         return $this->hasMany("App\Article");
     }
+    //scope de categorias para buscarlas
+    //se le pasa como parametro una varible $query y en este caso una varible q vamosa buscar
+    public function scopeBuscadorCategory($query, $name) {
+
+        return $query->where('name', '=', $name); //where() es el metodo donde.
+        //retornamos la $query q vamos a buscar
+        // where recive como parametro el nombre de la columna a q vamos a buscar la condicion y la varible de busqueda
+        //en este caso buscamos el nombre de la categorias
+
+    }
 }

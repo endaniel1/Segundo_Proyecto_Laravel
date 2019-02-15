@@ -179,6 +179,7 @@ return [
 
         //provider personale
         Collective\Html\HtmlServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class, //esto es para la vista con compose este provider
 
     ],
 

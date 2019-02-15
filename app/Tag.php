@@ -13,7 +13,7 @@ class Tag extends Model {
     protected $fillable = ["name"];
 
     public function articles() {
-        $this->belongsToMany("App\Article")->withTimestamps();
+        return $this->belongsToMany("App\Article")->withTimestamps();
     }
 
     //para hacer un scope para un buscador
@@ -23,6 +23,17 @@ class Tag extends Model {
         return $query->where('name', 'like', '%' . $name . '%'); //where es donde
         //retornamos la query q vamos a buscar
         //en este caso buscamos el nombre del tags(porque el tag por q estamos tabrabando con el model) seguidamente la forma en q vamos a buscar q es like y trese parametro es la varible  a q hacemos referencia para buscar
+    }
+
+    //scope de tags para buscarlas
+    //se le pasa como parametro una varible $query y en este caso una varible q vamosa buscar
+    public function scopeBuscadorTag($query, $name) {
+
+        return $query->where('name', '=', $name); //where() es el metodo donde.
+        //retornamos la $query q vamos a buscar
+        // where recive como parametro el nombre de la columna a q vamos a buscar la condicion y la varible de busqueda
+        //en este caso buscamos el nombre de la categorias
+
     }
 
 }

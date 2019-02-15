@@ -21,6 +21,7 @@ class TagsController extends Controller {
         $tags = Tag::Buscador($request->name)->orderBy("id", "ASC")->paginate(2); //paginate como queremos q se pagine
 
         //retornamos a una vista y con with es para crear una varible y pasarsela a las vista, es mas facil de pasarle una varible a una vista es una de tantas formas
+        //dd($tags);
         return view("admin.tags.index")->with("tags", $tags);
     }
 

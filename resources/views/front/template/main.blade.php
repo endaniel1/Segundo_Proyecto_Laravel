@@ -7,7 +7,7 @@
 </head>
 <body>
 {{-- @include Incluye directamente el archivo espesificado--}}
-	@include("admin.template.partes.nav")
+	@include("front.template.partes.nav")
 
 	<section id="Content">
 		<div class="container">
@@ -22,10 +22,14 @@
 			</div>
 
 			<div class="row"  align="center">
-				<div class="col-lg-12 text-center">
+				<div class="col-lg-8 text-center">
 					@yield("content")
 				</div>
+				<div class="col-lg-4 aside">
+					@include("front.template.partes.aside")				
+				</div>
 			</div>
+
 		</div>
 	</section>
 	

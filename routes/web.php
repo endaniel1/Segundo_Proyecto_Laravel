@@ -16,6 +16,18 @@ Route::get('/', [
     "uses" => "FrontController@index",
 ]);
 
+Route::get("categories/{name}", [
+    "uses" => "FrontController@buscadorCategory",
+    "as"   => "front.buscador.category",
+
+]);
+
+Route::get("tags/{name}", [
+    "uses" => "FrontController@buscadorTag",
+    "as"   => "front.buscador.tag",
+
+]);
+
 //definimos un grupo de ruotas
 //le passamos un prefico q en este caso es sea admin
 //mandomos a una ruta de tioo modificar o q tenga aciones de modificar

@@ -34,7 +34,7 @@
             <a class="nav-link" href="{{ route('register') }}"><span class="glyphicon glyphicon-pencil"></span> Registrate</a>
           </li>
         @else<!-- Y sino mostramos los datos del ususrio autentificado-->       
-         <li class="active" ><a href="{{ route('front.index')}}">Inicio de Pagina</a></li>    
+         <li class="active" ><a href="{{ route('front.index')}}"><span class="glyphicon glyphicon-home"></span> Inicio de Pagina</a></li>    
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre><span class="glyphicon glyphicon-user"></span> 
             {{ Auth::user()->name }} <span class="caret"></span>
@@ -54,6 +54,6 @@
       </ul>
     </div>   
    
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container-fluid  -->
 </nav>
 </div>
