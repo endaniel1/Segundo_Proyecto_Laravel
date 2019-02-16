@@ -10,9 +10,13 @@
 			<div class="panel panel-primary">
   				
   				<div class="panel-body">
-					<img class="img-responsive" src="{{asset('images/articles/'.$article->images->name) }}" alt="">
+            <a href="{{route('front.view.article',$article->slug)}}">
+              <img class="img-responsive" src="{{asset('images/articles/'.$article->images->name) }}" alt="">
+            </a>
   				</div>
-  				<h4 class="text-center">{{ $article->title}}</h4>  				
+          <a href="{{route('front.view.article',$article->slug)}}">
+  				  <h4 class="text-center"><b>{{ $article->title}}</b></h4>
+          </a>  				
   				<div class="panel-footer panel-info">
   					<a href="{{route('front.buscador.category',$article->category->name)}}"><span class="glyphicon glyphicon-folder-open"></span> {{ $article->category->name}}</a>
   				</div>

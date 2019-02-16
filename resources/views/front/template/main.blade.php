@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2>
-						<span class="@yield('Logo_Conte','glyphicon glyphicon-alert')"></span> Vista Principal
+						<span class="@yield('Logo_Conte','glyphicon glyphicon-alert')"></span> @yield("titulo_logo","Vista Principal")
 					</h2>
 				<hr class="star-primary">
 				</div>

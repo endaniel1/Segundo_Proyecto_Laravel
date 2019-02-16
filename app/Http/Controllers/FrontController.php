@@ -65,4 +65,14 @@ class FrontController extends Controller {
         return view("front.index")
             ->with("articles", $articles);
     }
+
+    public function viewArticle($slug) {
+        $article = Article::findBySlugOrFail($slug); //el metodo findBySlugOrFail() busca por slug o falla esto es para q cuando falla arroja un error
+        $article->user;
+        $article->tags;
+        $article->category;
+        $article->images;
+        return view("front.article")->with("article", $article);
+    }
+
 }

@@ -17,7 +17,7 @@ class ComposerServiceProvider extends ServiceProvider {
     public function boot() {
         //aqui lo q usamos es la clases  based de composer como la View
         //esta recive como parametro un array con las vistas que van a reciviran las varibles y como segundo parametro el nombre de en donde se va a crear la vista con composer o algo asi mas o menos
-        View::composer(['front.index', "front.articles"], "App\Http\ViewComposers\AsideComposer");
+        View::composer(['front.index', "front.article"], "App\Http\ViewComposers\AsideComposer");
         //y para q todo esto funcione tenemos q agreagar en la carpeta config del proyecto el nombre de la clase de nuestro provider
         //para mas dudas revisar la documentacion mpara guiarse de lo q se hizo
     }

@@ -1,12 +1,16 @@
 <div style="padding-left: 5%; padding-right: 5%;">
 	<nav class="navbar navbar-default ">
   		<div class="container-fluid">  			 
-    		<div class="navbar-header">
-    			@auth
-    				<a class="navbar-brand" href="{{route('admin.index')}}"><span class="glyphicon glyphicon-chevron-left"></span>Regresar</a>
-    			@endauth<!-- Y cerramos la consulta de autentificadion -->
+    		<div class="navbar-header"> 
+          @auth
+            @if(Auth::user()->type=="admin"){{--Verifico aqui si es ususraio admin--}}              
+    				  <a class="navbar-brand" href="{{route('admin.index')}}"><span class="glyphicon glyphicon-chevron-left"></span>Regresar</a>
+            @endif
+          @endauth<!-- Y cerramos la consulta de autentificadion -->
     		 	@guest
+            <a href="{{ route('front.index')}}" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
     		 		<a class="navbar-brand" href="https://codigofacilito.com">Curso Codigo Facilito</a>
+
     		 	@endguest
     		</div>
     		

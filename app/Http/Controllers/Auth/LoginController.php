@@ -41,6 +41,7 @@ class LoginController extends Controller {
         if (Auth::user()->type == "admin") {
             return "admin";
         } else if (Auth::user()->type == "member") {
+            return "/";
             dd("falta crear la vista de member");
         }
     }

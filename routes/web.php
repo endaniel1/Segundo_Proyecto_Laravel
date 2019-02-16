@@ -28,6 +28,10 @@ Route::get("tags/{name}", [
 
 ]);
 
+Route::get("articles/{slug}", [
+    "uses" => "FrontController@viewArticle",
+    "as"   => "front.view.article",
+]);
 //definimos un grupo de ruotas
 //le passamos un prefico q en este caso es sea admin
 //mandomos a una ruta de tioo modificar o q tenga aciones de modificar
