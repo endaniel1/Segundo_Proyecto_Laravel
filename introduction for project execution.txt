@@ -1,0 +1,8 @@
+Antes De Correr La Aplicacion:
+-Debes de Ejecutar Por Consola Estado En La Carpeta Del Proyecto.
+-El Comando composer install. Porque El Proyecto no Carga la Carperta vendor Que Es La Que Tiene Todas Las Dependencias Que Carga el Proyecto De Laravel.
+-Seguidamente Se hace Una Copia del Archivo .env.example
+-Se Le Coloca El Nombre .env
+-Despues de A Ver Echo Se Tendra Que Ejecutar el Comando php artisan key:generate Para Ejecutar Una Clave Unica Para Nuestro Proyecto
+-Ya Para Finalizar Solo Se Edita o Se Cambia a el archivo .env las Rutas y las Contraseñas Correspondiente a Nuestra Base de Datos
+-Y Listo Ya Podemos Correr La Aplicacion De Forma Correcta 
