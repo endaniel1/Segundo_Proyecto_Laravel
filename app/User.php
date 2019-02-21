@@ -30,4 +30,9 @@ class User extends Authenticatable {
     public function articles() {
         $this->hashMany("App\Article");
     }
+    //este metodo lo q hace es si el usuario es de tipo admin nos devolvera true
+    //lo vamos a utilizar en el middleware
+    public function admin() {
+        return $this->type === "admin";
+    }
 }

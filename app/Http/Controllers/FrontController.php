@@ -68,6 +68,7 @@ class FrontController extends Controller {
 
     public function viewArticle($slug) {
         $article = Article::findBySlugOrFail($slug); //el metodo findBySlugOrFail() busca por slug o falla esto es para q cuando falla arroja un error
+        //llamos aqui a la relaciones de user, tags, category y images
         $article->user;
         $article->tags;
         $article->category;

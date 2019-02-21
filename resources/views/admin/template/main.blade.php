@@ -3,6 +3,7 @@
 <head>
 	<title>@yield("title","Default") | de Administracion</title>
 	<link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">	
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/general.css') }}">	
 	<link rel="stylesheet" type="text/css" href="{{ asset('plugins/chosen_v1.8.7/chosen.css') }}">	
 	<link rel="stylesheet" type="text/css" href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }}">	
 

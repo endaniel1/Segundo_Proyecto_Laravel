@@ -4,7 +4,7 @@
 @section("Logo_Conte","glyphicon glyphicon-home")
 
 @section("content")
-	
+	<h2>@lang("app.title_last_articles")</h2>
 	@foreach($articles as $article)
 		<div class="col-md-6">
 			<div class="panel panel-primary">

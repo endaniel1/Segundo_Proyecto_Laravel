@@ -13,9 +13,11 @@
 		{!! $article->content!!}
 		<hr>
 		<h3 class="title-front text-left">Comentarios</h3>
-		@foreach($article->tags as $tag)
-			{{$tag->name}}
-		@endforeach
+		<div class="text-left">
+			@foreach($article->tags as $tag)
+			{{$tag->name}} /
+			@endforeach
+		</div>			
 		<hr>
 		<div id="disqus_thread"></div>
 			<script>

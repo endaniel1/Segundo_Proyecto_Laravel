@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-lg-12 text-center">
 		<div class="panel panel-primary">
-			<div class="panel-heading">Categorias</div>
+			<div class="panel-heading">@lang("app.title_categories")</div>
 			<div class="panel-body">
 				<ul class="list-group">
 					@foreach($categories as $category)

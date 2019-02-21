@@ -43,12 +43,16 @@ Route::group(["prefix" => "admin", "middleware" => "auth"], function () {
         return view('admin.index');
     }]);
 
-    //como primer pararametro q resive es la url a ala q vamos y despues el controlador
-    Route::resource("users", "UsersController"); //users para entar y segundo parametro el controlador, y con el @ le indicamos el metodo q queremos q se ejecute
-    Route::get("users/{id}/destroy", [
-        "uses" => "UsersController@destroy",
-        "as"   => "admin.users.destroy",
-    ]); //esta es la ruta de eliminacio de usuarios
+    // Grupos de rutas del Usuarios Restringiendo la ruta a los usuario member
+    Route::group(["middleware" => "admin"], function () {
+        //como primer pararametro q resive es la url a ala q vamos y despues el controlador
+        //users para entar y segundo parametro el controlador, y con el @ le indicamos el metodo q queremos q se ejecute
+        Route::resource("users", "UsersController");
+        Route::get("users/{id}/destroy", [
+            "uses" => "UsersController@destroy",
+            "as"   => "admin.users.destroy",
+        ]); //esta es la ruta de eliminacio de usuarios
+    });
 
     //rutas de categorias
     Route::resource("categories", "CategoriesController");

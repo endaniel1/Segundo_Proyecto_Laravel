@@ -2,15 +2,14 @@
 	<nav class="navbar navbar-default ">
   		<div class="container-fluid">  			 
     		<div class="navbar-header"> 
-          @auth
-            @if(Auth::user()->type=="admin"){{--Verifico aqui si es ususraio admin--}}              
-    				  <a class="navbar-brand" href="{{route('admin.index')}}"><span class="glyphicon glyphicon-chevron-left"></span>Regresar</a>
-            @endif
+          @auth{{--Verifico aqui si ay ususario autentificado--}}
+            <a class="navbar-brand" href="{{route('admin.index')}}"><span class="glyphicon glyphicon-chevron-left"></span>Regresar</a>
+            
           @endauth<!-- Y cerramos la consulta de autentificadion -->
     		 	@guest
-            <a href="{{ route('front.index')}}" class="navbar-brand"><span class="glyphicon glyphicon-home"></span></a>
-    		 		<a class="navbar-brand" href="https://codigofacilito.com">Curso Codigo Facilito</a>
-
+            <a class="navbar-brand" href="https://codigofacilito.com">
+              <img class="imagen" src="{{asset('images/Codigo_Facilito.png')}}" alt="Codigo_Facilito">
+            </a>
     		 	@endguest
     		</div>
     		
@@ -22,7 +21,7 @@
           				</li>
           				<li class="nav-item">
             			<a class="nav-link" href="{{ route('register') }}"><span class="glyphicon glyphicon-pencil"></span> Registrate</a>
-          				</li>
+          				</li>                 
         			@else<!-- Y sino mostramos los datos del ususrio autentificado-->
         			<li class="dropdown">
             			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre><span class="glyphicon glyphicon-user"></span> 

@@ -25,7 +25,7 @@ class LoginController extends Controller {
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -36,13 +36,13 @@ class LoginController extends Controller {
         $this->middleware('guest')->except('logout');
     }
 //aqui puedo ver o redirecionar por medio de mas logica en vez de con la variavle de redirecionamemiento esta funcion mas q todo se utiliza para q cuando sea niveles de usurario
-    protected function redirectTo() {
+    /*protected function redirectTo() {
 
-        if (Auth::user()->type == "admin") {
-            return "admin";
-        } else if (Auth::user()->type == "member") {
-            return "/";
-            dd("falta crear la vista de member");
-        }
-    }
+if (Auth::user()->type == "admin") {
+return "admin";
+} else if (Auth::user()->type == "member") {
+return "/";
+dd("falta crear la vista de member");
+}
+}///aqui lo descomento porque estoy aqui redescribiendo el metodo y para eso tengo el middleware q cree*/
 }

@@ -5,24 +5,23 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://codigofacilito.com">Curso Codigo Facilito</a>
+      <a class="navbar-brand" href="https://codigofacilito.com">
+        <img class="imagen" src="{{asset('images/Codigo_Facilito.png')}}" alt="Codigo_Facilito">
+      </a>
     </div>
+
     {{-- aqqui desimos si ay un unsuario autentificado mostamos estoz parte--}}
     @auth
     
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href=" {{ route('users.index') }}">Usuarios <span class="sr-only">(current)</span></a></li>
+        @if(Auth::user()->admin()) 
+          <li class="active"><a href=" {{ route('users.index') }}">Usuarios <span class="sr-only">(current)</span></a></li>
+        @endif       
         <li class="active" ><a href="{{ route('categories.index')}}">Categorias</a></li>
         <li class="active" ><a href="{{ route('tags.index')}}">Tags</a></li>
         <li class="active" ><a href="{{ route('articles.index')}}">Articulos</a></li>
-        <li class="active" ><a href="{{ route('admin.images.index')}}">Imagenes</a></li>
+        <li class="active" ><a href="{{ route('admin.images.index')}}">Imagenes</a></li>        
       </ul>
    @endauth <!-- Y aqui serramos   -->
       <ul class="nav navbar-nav navbar-right">
